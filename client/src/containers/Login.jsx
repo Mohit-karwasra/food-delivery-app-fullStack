@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { LoginBg, Logo } from "../assets";
 import { LoginInput } from "../components";
 import { FaEnvelope, FaLock } from "react-icons/fa";
@@ -16,6 +16,8 @@ import {
 import { app } from "../config/firebase.config";
 import { validateUserJWTToken } from "../api";
 import { useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { setUserDetails } from "../context/actions/userActions";
 
 const Login = () => {
 	const [userEmail, setUserEmail] = useState("");
@@ -27,6 +29,16 @@ const Login = () => {
 	const provider = new GoogleAuthProvider();
 
 	const navigate = useNavigate();
+	const dispatch = useDispatch();
+
+	// to reroute the user to main page if user is already logged in
+	const user = useSelector((state) => state.user);
+
+	useEffect(() => {
+		if (user) {
+			navigate("/", { replace: true });
+		}
+	}, [user]);
 
 	const loginWithGoogle = async () => {
 		await signInWithPopup(firebaseAuth, provider) // returns promise
@@ -36,7 +48,9 @@ const Login = () => {
 					// to verify user credentials we need to send the access token to backend and verify it from there as to it updates every 1 hour.
 					if (creden) {
 						creden.getIdToken().then((token) => {
-							validateUserJWTToken(token).then((data) => console.log(data));
+							validateUserJWTToken(token).then((data) => {
+								dispatch(setUserDetails(data));
+							});
 							navigate("/", { replace: true });
 						});
 					}
@@ -59,7 +73,7 @@ const Login = () => {
 						if (creden) {
 							creden.getIdToken().then((token) => {
 								validateUserJWTToken(token).then((data) => {
-									console.log(data);
+									dispatch(setUserDetails(data));
 								});
 								navigate("/", { replace: true });
 							});
@@ -80,7 +94,7 @@ const Login = () => {
 					if (creden) {
 						creden.getIdToken().then((token) => {
 							validateUserJWTToken(token).then((data) => {
-								console.log(data);
+								dispatch(setUserDetails(data));
 							});
 							navigate("/", { replace: true });
 						});
