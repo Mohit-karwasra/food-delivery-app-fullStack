@@ -6,8 +6,16 @@ import { motion } from "framer-motion";
 import { buttonClick } from "../animations";
 import { FcGoogle } from "react-icons/fc";
 
-import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+import {
+	getAuth,
+	signInWithPopup,
+	GoogleAuthProvider,
+	createUserWithEmailAndPassword,
+	signInWithEmailAndPassword,
+} from "firebase/auth";
 import { app } from "../config/firebase.config";
+import { validateUserJWTToken } from "../api";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
 	const [userEmail, setUserEmail] = useState("");
@@ -18,6 +26,8 @@ const Login = () => {
 	const firebaseAuth = getAuth(app); // all firebase enabled auth data is referenced here
 	const provider = new GoogleAuthProvider();
 
+	const navigate = useNavigate();
+
 	const loginWithGoogle = async () => {
 		await signInWithPopup(firebaseAuth, provider) // returns promise
 			.then((userCred) => {
@@ -25,10 +35,61 @@ const Login = () => {
 				firebaseAuth.onAuthStateChanged((creden) => {
 					// to verify user credentials we need to send the access token to backend and verify it from there as to it updates every 1 hour.
 					if (creden) {
-						creden.getIdToken().then((token) => console.log(token));
+						creden.getIdToken().then((token) => {
+							validateUserJWTToken(token).then((data) => console.log(data));
+							navigate("/", { replace: true });
+						});
 					}
 				});
 			});
+	};
+
+	const signUpWithEmailPass = async () => {
+		if (userEmail === "" || password === "" || confirmPassword === "") {
+			// alert message
+		} else {
+			if (password === confirmPassword) {
+				setUserEmail("");
+				setPassword("");
+				setConfirmPassword("");
+				await createUserWithEmailAndPassword(firebaseAuth, userEmail, password).then((userCred) => {
+					// handle user credentials
+					firebaseAuth.onAuthStateChanged((creden) => {
+						// to verify user credentials we need to send the access token to backend and verify it from there as to it updates every 1 hour.
+						if (creden) {
+							creden.getIdToken().then((token) => {
+								validateUserJWTToken(token).then((data) => {
+									console.log(data);
+								});
+								navigate("/", { replace: true });
+							});
+						}
+					});
+				});
+			} else {
+				// alert message
+			}
+		}
+	};
+
+	const signInWithEmailPass = async () => {
+		if (userEmail !== "" && password !== "") {
+			await signInWithEmailAndPassword(firebaseAuth, userEmail, password).then((userCred) => {
+				firebaseAuth.onAuthStateChanged((creden) => {
+					// to verify user credentials we need to send the access token to backend and verify it from there as to it updates every 1 hour.
+					if (creden) {
+						creden.getIdToken().then((token) => {
+							validateUserJWTToken(token).then((data) => {
+								console.log(data);
+							});
+							navigate("/", { replace: true });
+						});
+					}
+				});
+			});
+		} else {
+			// alert message
+		}
 	};
 
 	return (
@@ -108,6 +169,7 @@ const Login = () => {
 						<motion.button
 							{...buttonClick}
 							className=" w-full px-4 py-2 rounded-md bg-red-500 cursor-pointer text-white text-xl capitalize hover:bg-red-600 transition-all duration-150"
+							onClick={signUpWithEmailPass}
 						>
 							Sign Up
 						</motion.button>
@@ -115,6 +177,7 @@ const Login = () => {
 						<motion.button
 							{...buttonClick}
 							className=" w-full px-4 py-2 rounded-md bg-red-500 cursor-pointer text-white text-xl capitalize hover:bg-red-600 transition-all duration-150"
+							onClick={signInWithEmailPass}
 						>
 							Sign In
 						</motion.button>
