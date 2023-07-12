@@ -3,14 +3,17 @@ import { Route, Routes } from "react-router-dom";
 import { Login, Main } from "./containers";
 import { getAuth } from "firebase/auth";
 import { app } from "./config/firebase.config";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { validateUserJWTToken } from "./api";
 import { setUserDetails } from "./context/actions/userActions";
 import { motion } from "framer-motion";
 import { fadeInOut } from "./animations";
+import { Alert, MainLoader } from "./components";
 const App = () => {
 	const firebaseAuth = getAuth(app);
 	const [isLoading, setIsLoading] = useState(false);
+
+	const alert = useSelector((state) => state.alert);
 
 	const dispatch = useDispatch();
 
@@ -25,7 +28,7 @@ const App = () => {
 					});
 				});
 			}
-			setTimeout(() => {
+			setInterval(() => {
 				setIsLoading(false);
 			}, 3000);
 		});
@@ -38,13 +41,15 @@ const App = () => {
 					{...fadeInOut}
 					className="fixed z-50 inset-0 bg-lightOverlay backdrop-blur-md flex items-center justify-center w-full"
 				>
-					Loading....
+					<MainLoader />
 				</motion.div>
 			)}
 			<Routes>
 				<Route path="/*" element={<Main />} />
 				<Route path="/login" element={<Login />} />
 			</Routes>
+
+			{alert?.type && <Alert type={alert?.type} message={alert?.message} />}
 		</div>
 	);
 };
