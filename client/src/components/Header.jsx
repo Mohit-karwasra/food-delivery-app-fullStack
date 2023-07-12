@@ -1,16 +1,33 @@
 import React, { useState } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import { Avatar, Logo } from "../assets";
 import { isActiveStyles, isNorActiveStyles } from "../utils/styles";
 import { motion } from "framer-motion";
 import { buttonClick, slideTop } from "../animations";
 import { MdLogout, MdShoppingCart } from "../assets/icons";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { getAuth } from "firebase/auth";
+import { app } from "../config/firebase.config";
+import { setUserNull } from "../context/actions/userActions";
 
 const Header = () => {
 	const user = useSelector((state) => state.user);
 
 	const [isMenu, setIsMenu] = useState(false);
+
+	const navigate = useNavigate();
+	const dispatch = useDispatch();
+
+	const firebaseAuth = getAuth(app);
+	const signOut = () => {
+		firebaseAuth
+			.signOut()
+			.then(() => {
+				dispatch(setUserNull());
+				navigate("/login", { replace: true });
+			})
+			.catch((err) => console.log(err));
+	};
 
 	return (
 		<header className="fixed backdrop-blur-md z-50 inset-x-0 top-0 flex items-center justify-between px-12 md:px-20 py-6">
@@ -88,6 +105,7 @@ const Header = () => {
 
 									<motion.div
 										{...buttonClick}
+										onClick={signOut}
 										className="group flex items-center justify-center px-3 py-2 rounded-md shadow-md bg-gray-100 hover:bg-gray-200 gap-3"
 									>
 										<MdLogout className=" text-2xl text-textColor group-hover::text-headingColor" />
