@@ -12,3 +12,23 @@ export const validateUserJWTToken = async (token) => {
 		return null;
 	}
 };
+
+// add new product
+export const addNewProduct = async (data) => {
+	try {
+		const res = await axios.post(`${baseURL}/api/products/create`, { ...data });
+		return res.data.data;
+	} catch (error) {
+		return null;
+	}
+};
+
+// get all products
+export const getAllProducts = async () => {
+	try {
+		const res = await axios.get(`${baseURL}/api/products/all`);
+		return res.data.data;
+	} catch (error) {
+		return null;
+	}
+};
