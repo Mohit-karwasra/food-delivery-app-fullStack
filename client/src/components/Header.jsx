@@ -9,6 +9,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { getAuth } from "firebase/auth";
 import { app } from "../config/firebase.config";
 import { setUserNull } from "../context/actions/userActions";
+import { setCartOn } from "../context/actions/displayCartAction";
+import { MdMenu } from "react-icons/md";
 
 const Header = () => {
 	const user = useSelector((state) => state.user);
@@ -30,9 +32,15 @@ const Header = () => {
 			.catch((err) => console.log(err));
 	};
 
+	// navbar for smaller screen
+	const [showNavLinks, setShowNavLinks] = useState(false);
+	const toggleNavLinks = () => {
+		setShowNavLinks((prevShowNavLinks) => !prevShowNavLinks);
+	};
+
 	return (
 		<header className="fixed backdrop-blur-md z-50 inset-x-0 top-0 flex items-center justify-between px-12 md:px-20 py-6">
-			<NavLink to={"/"} className="flex items-center justify-center gap-4">
+			{/* <NavLink to={"/"} className="flex items-center justify-center gap-4">
 				<img src={Logo} alt="logo" className="w-12" />
 				<p className=" font-semibold text-xl">Hanumangarh</p>
 			</NavLink>
@@ -64,7 +72,122 @@ const Header = () => {
 					</NavLink>
 				</ul>
 
-				<motion.div {...buttonClick} className="relative cursor-pointer">
+				
+				<div className="md:hidden">
+					<motion.button {...buttonClick} onClick={toggleNavLinks} className="p-2">
+						<MdMenu className="text-2xl text-textColor" />
+					</motion.button>
+				</div>
+				
+				{showNavLinks && (
+					<nav className=" md:hidden flex flex-col items-center mt-4">
+						<NavLink
+							className={({ isActive }) => (isActive ? isActiveStyles : isNorActiveStyles)}
+							to={"/"}
+						>
+							Home
+						</NavLink>
+						<NavLink
+							className={({ isActive }) => (isActive ? isActiveStyles : isNorActiveStyles)}
+							to={"/menu"}
+						>
+							Menu
+						</NavLink>
+						<NavLink
+							className={({ isActive }) => (isActive ? isActiveStyles : isNorActiveStyles)}
+							to={"/services"}
+						>
+							Services
+						</NavLink>
+						<NavLink
+							className={({ isActive }) => (isActive ? isActiveStyles : isNorActiveStyles)}
+							to={"/aboutus"}
+						>
+							About Us
+						</NavLink>
+					</nav>
+				)}
+			</nav> */}
+
+			{/* Hamburger menu icon (visible on smaller screens) */}
+			<div className="md:hidden">
+				<motion.button {...buttonClick} onClick={toggleNavLinks} className="p-2">
+					<MdMenu className="text-2xl text-textColor" />
+				</motion.button>
+			</div>
+			{/* Responsive nav links */}
+			{showNavLinks && (
+				<div className=" fixed top-20 left-4 backdrop-blur-lg rounded-lg">
+					<nav className="md:hidden flex flex-col items-start mt-4 ">
+						<NavLink
+							className={({ isActive }) => (isActive ? isActiveStyles : isNorActiveStyles)}
+							to={"/"}
+						>
+							Home
+						</NavLink>
+						<NavLink
+							className={({ isActive }) => (isActive ? isActiveStyles : isNorActiveStyles)}
+							to={"/menu"}
+						>
+							Menu
+						</NavLink>
+						<NavLink
+							className={({ isActive }) => (isActive ? isActiveStyles : isNorActiveStyles)}
+							to={"/services"}
+						>
+							Services
+						</NavLink>
+						<NavLink
+							className={({ isActive }) => (isActive ? isActiveStyles : isNorActiveStyles)}
+							to={"/aboutus"}
+						>
+							About Us
+						</NavLink>
+					</nav>
+				</div>
+			)}
+			{/* Logo and title */}
+			<NavLink to={"/"} className="flex items-center justify-center gap-4">
+				<img src={Logo} alt="logo" className="w-12" />
+				<p className="font-semibold text-xl lg:text-3xl">Hanumangarh</p>
+			</NavLink>
+
+			{/* Nav links for larger screens */}
+			<nav className="hidden md:flex items-center justify-center gap-8 flex-grow ">
+				<ul className="items-center justify-center gap-16 ">
+					<NavLink
+						className={({ isActive }) => (isActive ? isActiveStyles : isNorActiveStyles)}
+						to={"/"}
+					>
+						<span className="font-semibold text-xl lg:text-3xl">Home</span>
+					</NavLink>
+					<NavLink
+						className={({ isActive }) => (isActive ? isActiveStyles : isNorActiveStyles)}
+						to={"/menu"}
+					>
+						<span className="font-semibold text-xl lg:text-3xl">Menu</span>
+					</NavLink>
+					<NavLink
+						className={({ isActive }) => (isActive ? isActiveStyles : isNorActiveStyles)}
+						to={"/services"}
+					>
+						<span className="font-semibold text-xl lg:text-3xl">Services</span>
+					</NavLink>
+					<NavLink
+						className={({ isActive }) => (isActive ? isActiveStyles : isNorActiveStyles)}
+						to={"/aboutus"}
+					>
+						<span className="font-semibold text-xl lg:text-3xl">About Us</span>
+					</NavLink>
+				</ul>
+			</nav>
+
+			<nav className="flex items-center justify-center gap-8">
+				<motion.div
+					{...buttonClick}
+					onClick={() => dispatch(setCartOn())}
+					className="relative cursor-pointer"
+				>
 					<MdShoppingCart className=" text-3xl text-textColor" />
 					{cart?.length > 0 && (
 						<div className="w-6 h-6 rounded-full bg-red-500 flex items-center justify-center absolute -top-4 -right-1">
