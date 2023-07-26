@@ -39,7 +39,7 @@ const Header = () => {
 	};
 
 	return (
-		<header className="fixed backdrop-blur-md z-50 inset-x-0 top-0 flex items-center justify-between px-12 md:px-20 py-6">
+		<header className="fixed backdrop-blur-lg z-50 inset-x-0 top-0 flex items-center justify-between px-12 md:px-20 py-6 ">
 			{/* <NavLink to={"/"} className="flex items-center justify-center gap-4">
 				<img src={Logo} alt="logo" className="w-12" />
 				<p className=" font-semibold text-xl">Hanumangarh</p>
@@ -214,12 +214,14 @@ const Header = () => {
 									onMouseLeave={() => setIsMenu(false)}
 									className=" px-6 py-4 w-48 bg-lightOverlay backdrop-blur-md rounded-md shadow-md absolute top-12 right-0 flex flex-col gap-4"
 								>
+									{/* {user?.user_id === process.env.REACT_APP_ADMIN_ID && ( */}
 									<Link
 										className=" hover:text-red-500 text-xl text-textColor"
 										to={"/dashboard/home"}
 									>
 										Dashboard
 									</Link>
+									{/* )} */}
 
 									<Link className=" hover:text-red-500 text-xl text-textColor" to={"/profile"}>
 										My Profile

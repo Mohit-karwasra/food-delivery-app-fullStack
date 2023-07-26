@@ -22,6 +22,9 @@ const Home = () => {
 					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque temporibus laboriosam
 					facilis pariatur, architecto tenetur harum enim autem minima necessitatibus sapiente
 					eaque, expedita cupiditate corrupti accusantium voluptatum molestias provident veniam.
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur nam atque nesciunt,
+					optio voluptates nisi molestiae mollitia at. Harum quas eaque consectetur consequatur,
+					quasi assumenda corrupti doloremque impedit voluptatum quam.
 				</p>
 				<motion.button
 					{...buttonClick}
