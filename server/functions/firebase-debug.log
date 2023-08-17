@@ -1,0 +1,132 @@
+[debug] [2023-08-17T19:49:15.386Z] ----------------------------------------------------------------------
+[debug] [2023-08-17T19:49:15.388Z] Command:       /home/mohit_karwasra/.nvm/versions/node/v18.16.0/bin/node /home/mohit_karwasra/.nvm/versions/node/v18.16.0/bin/firebase emulators:start --only functions
+[debug] [2023-08-17T19:49:15.388Z] CLI Version:   12.4.7
+[debug] [2023-08-17T19:49:15.388Z] Platform:      linux
+[debug] [2023-08-17T19:49:15.388Z] Node Version:  v18.16.0
+[debug] [2023-08-17T19:49:15.389Z] Time:          Fri Aug 18 2023 01:19:15 GMT+0530 (India Standard Time)
+[debug] [2023-08-17T19:49:15.389Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-08-17T19:49:15.391Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[debug] [2023-08-17T19:49:15.487Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-08-17T19:49:15.488Z] > authorizing via signed-in user (royalkarwasra22@gmail.com)
+[info] i  emulators: Starting emulators: functions {"metadata":{"emulator":{"name":"hub"},"message":"Starting emulators: functions"}}
+[debug] [2023-08-17T19:49:15.497Z] [logging] Logging Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2023-08-17T19:49:15.497Z] assigned listening specs for emulators {"user":{"hub":[{"address":"127.0.0.1","family":"IPv4","port":4400},{"address":"::1","family":"IPv6","port":4400}],"ui":[{"address":"127.0.0.1","family":"IPv4","port":4000},{"address":"::1","family":"IPv6","port":4000}],"logging":[{"address":"127.0.0.1","family":"IPv4","port":4500}]},"metadata":{"message":"assigned listening specs for emulators"}}
+[debug] [2023-08-17T19:49:15.505Z] [hub] writing locator at /tmp/hub-food-delivery-app-fullstack.json
+[debug] [2023-08-17T19:49:15.510Z] [functions] Functions Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2023-08-17T19:49:15.511Z] [eventarc] Eventarc Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2023-08-17T19:49:15.511Z] late-assigned ports for functions and eventarc emulators {"user":{"hub":[{"address":"127.0.0.1","family":"IPv4","port":4400},{"address":"::1","family":"IPv6","port":4400}],"ui":[{"address":"127.0.0.1","family":"IPv4","port":4000},{"address":"::1","family":"IPv6","port":4000}],"logging":[{"address":"127.0.0.1","family":"IPv4","port":4500}],"functions":[{"address":"127.0.0.1","family":"IPv4","port":5001}],"eventarc":[{"address":"127.0.0.1","family":"IPv4","port":9299}]},"metadata":{"message":"late-assigned ports for functions and eventarc emulators"}}
+[warn] ⚠  functions: The following emulators are not running, calls to these services from the Functions emulator will affect production: auth, firestore, database, hosting, pubsub, storage {"metadata":{"emulator":{"name":"functions"},"message":"The following emulators are not running, calls to these services from the Functions emulator will affect production: \u001b[1mauth, firestore, database, hosting, pubsub, storage\u001b[22m"}}
+[debug] [2023-08-17T19:49:15.514Z] defaultcredentials: writing to file /home/mohit_karwasra/.config/firebase/royalkarwasra22_gmail_com_application_default_credentials.json
+[debug] [2023-08-17T19:49:15.525Z] Setting GAC to /home/mohit_karwasra/.config/firebase/royalkarwasra22_gmail_com_application_default_credentials.json {"metadata":{"emulator":{"name":"functions"},"message":"Setting GAC to /home/mohit_karwasra/.config/firebase/royalkarwasra22_gmail_com_application_default_credentials.json"}}
+[debug] [2023-08-17T19:49:15.527Z] > refreshing access token with scopes: []
+[debug] [2023-08-17T19:49:15.528Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2023-08-17T19:49:15.528Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2023-08-17T19:49:16.006Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2023-08-17T19:49:16.007Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2023-08-17T19:49:16.030Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/food-delivery-app-fullstack/adminSdkConfig [none]
+[debug] [2023-08-17T19:49:16.342Z] <<< [apiv2][status] GET https://firebase-public.firebaseio.com/cli.json 200
+[debug] [2023-08-17T19:49:16.342Z] <<< [apiv2][body] GET https://firebase-public.firebaseio.com/cli.json {"cloudBuildErrorAfter":1594252800000,"cloudBuildWarnAfter":1590019200000,"defaultNode10After":1594252800000,"minVersion":"3.0.5","node8DeploysDisabledAfter":1613390400000,"node8RuntimeDisabledAfter":1615809600000,"node8WarnAfter":1600128000000}
+[debug] [2023-08-17T19:49:17.180Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/food-delivery-app-fullstack/adminSdkConfig 200
+[debug] [2023-08-17T19:49:17.180Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/food-delivery-app-fullstack/adminSdkConfig {"projectId":"food-delivery-app-fullstack","storageBucket":"food-delivery-app-fullstack.appspot.com","locationId":"asia-south1"}
+[debug] [2023-08-17T19:49:17.232Z] Ignoring unsupported arg: auto_download {"metadata":{"emulator":{"name":"ui"},"message":"Ignoring unsupported arg: auto_download"}}
+[debug] [2023-08-17T19:49:17.232Z] Ignoring unsupported arg: port {"metadata":{"emulator":{"name":"ui"},"message":"Ignoring unsupported arg: port"}}
+[debug] [2023-08-17T19:49:17.232Z] Starting Emulator UI with command {"binary":"node","args":["/home/mohit_karwasra/.cache/firebase/emulators/ui-v1.11.7/server/server.js"],"optionalArgs":[],"joinArgs":false} {"metadata":{"emulator":{"name":"ui"},"message":"Starting Emulator UI with command {\"binary\":\"node\",\"args\":[\"/home/mohit_karwasra/.cache/firebase/emulators/ui-v1.11.7/server/server.js\"],\"optionalArgs\":[],\"joinArgs\":false}"}}
+[info] i  ui: Emulator UI logging to ui-debug.log {"metadata":{"emulator":{"name":"ui"},"message":"Emulator UI logging to \u001b[1mui-debug.log\u001b[22m"}}
+[debug] [2023-08-17T19:49:17.335Z] Web / API server started at 127.0.0.1:4000
+ {"metadata":{"emulator":{"name":"ui"},"message":"Web / API server started at 127.0.0.1:4000\n"}}
+[debug] [2023-08-17T19:49:17.335Z] Web / API server started at ::1:4000
+ {"metadata":{"emulator":{"name":"ui"},"message":"Web / API server started at ::1:4000\n"}}
+[info] i  functions: Watching "/home/mohit_karwasra/repos/food-delivery-app-fullStack/server/functions" for Cloud Functions... {"metadata":{"emulator":{"name":"functions"},"message":"Watching \"/home/mohit_karwasra/repos/food-delivery-app-fullStack/server/functions\" for Cloud Functions..."}}
+[debug] [2023-08-17T19:49:17.523Z] Validating nodejs source
+[debug] [2023-08-17T19:49:18.627Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "18"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "firebase-admin": "^11.8.0",
+    "firebase-functions": "^4.3.1"
+  },
+  "devDependencies": {
+    "eslint": "^8.15.0",
+    "eslint-config-google": "^0.14.0",
+    "firebase-functions-test": "^3.1.0"
+  },
+  "private": true
+}
+[debug] [2023-08-17T19:49:18.628Z] Building nodejs source
+[debug] [2023-08-17T19:49:18.628Z] Failed to find version of module node: reached end of search path /home/mohit_karwasra/repos/food-delivery-app-fullStack/server/functions/node_modules
+[info] ✔  functions: Using node@18 from host. 
+[info] i  functions: Loaded environment variables from .env. 
+[debug] [2023-08-17T19:49:18.631Z] Could not find functions.yaml. Must use http discovery
+[debug] [2023-08-17T19:49:18.634Z] Found firebase-functions binary at '/home/mohit_karwasra/repos/food-delivery-app-fullStack/server/functions/node_modules/.bin/firebase-functions'
+[info] Serving at port 8846
+
+[debug] [2023-08-17T19:49:19.178Z] Got response from /__/functions.yaml {"endpoints":{"app":{"platform":"gcfv1","availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"serviceAccountEmail":null,"vpc":null,"httpsTrigger":{},"entryPoint":"app"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[info] shutdown requested via /__/quitquitquit
+
+[info] ✔  functions: Loaded functions definitions from source: app. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: app."}}
+[info] ✔  functions[us-central1-app]: http function initialized (http://127.0.0.1:5001/food-delivery-app-fullstack/us-central1/app). {"metadata":{"emulator":{"name":"functions"},"message":"\u001b[1mhttp\u001b[22m function initialized (http://127.0.0.1:5001/food-delivery-app-fullstack/us-central1/app)."}}
+[info] 
+┌─────────────────────────────────────────────────────────────┐
+│ ✔  All emulators ready! It is now safe to connect your app. │
+│ i  View Emulator UI at http://127.0.0.1:4000/               │
+└─────────────────────────────────────────────────────────────┘
+
+┌───────────┬────────────────┬─────────────────────────────────┐
+│ Emulator  │ Host:Port      │ View in Emulator UI             │
+├───────────┼────────────────┼─────────────────────────────────┤
+│ Functions │ 127.0.0.1:5001 │ http://127.0.0.1:4000/functions │
+└───────────┴────────────────┴─────────────────────────────────┘
+  Emulator Hub running at 127.0.0.1:4400
+  Other reserved ports: 4500
+
+Issues? Report them at https://github.com/firebase/firebase-tools/issues and attach the *-debug.log files.
+ 
+[debug] [2023-08-17T19:49:28.346Z] [work-queue] {"queuedWork":["/food-delivery-app-fullstack/us-central1/app-2023-08-17T19:49:28.346Z"],"queueLength":1,"runningWork":[],"workRunningCount":0}
+[debug] [2023-08-17T19:49:28.347Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":["/food-delivery-app-fullstack/us-central1/app-2023-08-17T19:49:28.346Z"],"workRunningCount":1}
+[debug] [2023-08-17T19:49:28.347Z] Accepted request GET /food-delivery-app-fullstack/us-central1/app --> us-central1-app
+[debug] [2023-08-17T19:49:28.350Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2023-08-17T19:49:28.351Z] [functions] Got req.url=/food-delivery-app-fullstack/us-central1/app, mapping to path=/ {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/food-delivery-app-fullstack/us-central1/app, mapping to path=/"}}
+[info] i  functions: Loaded environment variables from .env. 
+[debug] [2023-08-17T19:49:28.370Z] [worker-pool] addWorker(us-central1-app) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] addWorker(us-central1-app)"}}
+[debug] [2023-08-17T19:49:28.372Z] [worker-pool] Adding worker with key us-central1-app, total=1 {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] Adding worker with key us-central1-app, total=1"}}
+[debug] [2023-08-17T19:49:29.560Z] [runtime-status] [45074] Resolved module firebase-admin {"declared":true,"installed":true,"version":"11.9.0","resolution":"/home/mohit_karwasra/repos/food-delivery-app-fullStack/server/functions/node_modules/firebase-admin/lib/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"[runtime-status] [45074] Resolved module firebase-admin {\"declared\":true,\"installed\":true,\"version\":\"11.9.0\",\"resolution\":\"/home/mohit_karwasra/repos/food-delivery-app-fullStack/server/functions/node_modules/firebase-admin/lib/index.js\"}"}}
+[debug] [2023-08-17T19:49:29.561Z] [runtime-status] [45074] Resolved module firebase-functions {"declared":true,"installed":true,"version":"4.4.1","resolution":"/home/mohit_karwasra/repos/food-delivery-app-fullStack/server/functions/node_modules/firebase-functions/lib/v1/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"[runtime-status] [45074] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"4.4.1\",\"resolution\":\"/home/mohit_karwasra/repos/food-delivery-app-fullStack/server/functions/node_modules/firebase-functions/lib/v1/index.js\"}"}}
+[debug] [2023-08-17T19:49:29.562Z] [runtime-status] [45074] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"}] {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"[runtime-status] [45074] Outgoing network have been stubbed. [{\"name\":\"http\",\"status\":\"mocked\"},{\"name\":\"http\",\"status\":\"mocked\"},{\"name\":\"https\",\"status\":\"mocked\"},{\"name\":\"https\",\"status\":\"mocked\"},{\"name\":\"net\",\"status\":\"mocked\"}]"}}
+[debug] [2023-08-17T19:49:29.562Z] [runtime-status] [45074] Resolved module firebase-functions {"declared":true,"installed":true,"version":"4.4.1","resolution":"/home/mohit_karwasra/repos/food-delivery-app-fullStack/server/functions/node_modules/firebase-functions/lib/v1/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"[runtime-status] [45074] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"4.4.1\",\"resolution\":\"/home/mohit_karwasra/repos/food-delivery-app-fullStack/server/functions/node_modules/firebase-functions/lib/v1/index.js\"}"}}
+[debug] [2023-08-17T19:49:29.835Z] [runtime-status] [45074] Checked functions.config() {"config":{}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"[runtime-status] [45074] Checked functions.config() {\"config\":{}}"}}
+[debug] [2023-08-17T19:49:29.835Z] [runtime-status] [45074] firebase-functions has been stubbed. {"functionsResolution":{"declared":true,"installed":true,"version":"4.4.1","resolution":"/home/mohit_karwasra/repos/food-delivery-app-fullStack/server/functions/node_modules/firebase-functions/lib/v1/index.js"}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"[runtime-status] [45074] firebase-functions has been stubbed. {\"functionsResolution\":{\"declared\":true,\"installed\":true,\"version\":\"4.4.1\",\"resolution\":\"/home/mohit_karwasra/repos/food-delivery-app-fullStack/server/functions/node_modules/firebase-functions/lib/v1/index.js\"}}"}}
+[debug] [2023-08-17T19:49:29.836Z] [runtime-status] [45074] Resolved module firebase-functions {"declared":true,"installed":true,"version":"4.4.1","resolution":"/home/mohit_karwasra/repos/food-delivery-app-fullStack/server/functions/node_modules/firebase-functions/lib/v1/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"[runtime-status] [45074] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"4.4.1\",\"resolution\":\"/home/mohit_karwasra/repos/food-delivery-app-fullStack/server/functions/node_modules/firebase-functions/lib/v1/index.js\"}"}}
+[debug] [2023-08-17T19:49:29.837Z] [runtime-status] [45074] Resolved module firebase-admin {"declared":true,"installed":true,"version":"11.9.0","resolution":"/home/mohit_karwasra/repos/food-delivery-app-fullStack/server/functions/node_modules/firebase-admin/lib/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"[runtime-status] [45074] Resolved module firebase-admin {\"declared\":true,\"installed\":true,\"version\":\"11.9.0\",\"resolution\":\"/home/mohit_karwasra/repos/food-delivery-app-fullStack/server/functions/node_modules/firebase-admin/lib/index.js\"}"}}
+[debug] [2023-08-17T19:49:29.838Z] [runtime-status] [45074] Resolved module firebase-functions {"declared":true,"installed":true,"version":"4.4.1","resolution":"/home/mohit_karwasra/repos/food-delivery-app-fullStack/server/functions/node_modules/firebase-functions/lib/v1/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"[runtime-status] [45074] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"4.4.1\",\"resolution\":\"/home/mohit_karwasra/repos/food-delivery-app-fullStack/server/functions/node_modules/firebase-functions/lib/v1/index.js\"}"}}
+[debug] [2023-08-17T19:49:29.839Z] [runtime-status] [45074] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"11.9.0","resolution":"/home/mohit_karwasra/repos/food-delivery-app-fullStack/server/functions/node_modules/firebase-admin/lib/index.js"}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"[runtime-status] [45074] firebase-admin has been stubbed. {\"adminResolution\":{\"declared\":true,\"installed\":true,\"version\":\"11.9.0\",\"resolution\":\"/home/mohit_karwasra/repos/food-delivery-app-fullStack/server/functions/node_modules/firebase-admin/lib/index.js\"}}"}}
+[debug] [2023-08-17T19:49:29.967Z] [runtime-status] [45074] initializeApp(DEFAULT) {"credential":{"implicit":false,"projectId":"food-delivery-app-fullstack","privateKey":"-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQDWiX6L8Afw5l8e\nN14QPgn1qx6eWuToiN3aBw8ya+sOBMjpwpNBa9bUe+R6aXYoh/eRQZgVLsx6H6i+\npMoLJhhJngZWIMPCL56zzzFOEjrnmhXeGp51l3o39SEpigS/1oS9u4K/xt+6LU9z\nu7aFSc3cu7ptZjIGK+zyvxZ6ba2U842u+bL3828wfWEg5v+dG9bHat4FwXohzKn4\nQkgx/s4hUK3x64+rtlbYK1gnWq4SwzEDVC9r9p1eDoQfaHWeH3fjEIqAsD6lWvu+\nGVzXYafdxnlWBfJRz91E3y4oHLl1X0cdmcQw/K/kwKnyxZCaB8Nwh9V2ScEkiFtO\nPAQWO+K9AgMBAAECggEAAaREtSJtlSDWKn+G9z3aSqh4EAMnDEZ72B7EtYCQ6GcN\n+If2I4KFPtQB4BPthQrhUJm9ZbAZfXe/jVHqf+JXPjz41HDkvpgpsTuNJ4lJLRuH\nPk9a1hCGLWZxTgWR2rv0ARWtvvTxIlYVbQ/LKkLx0dYX651kFZsBcawXqnEral/d\nJ3uDNEbmm0577vqVNHSlWXF0wuZNljkNQZTi1cT0jpV/rcR2pvr+3iGJ+DBYmLuC\nfwwmDBs/WWZm27EF7aW11fnTTAQJMyTFeWYGiOdVkOTEAXaQ0SfPFHXV0r/7lbnL\n05yfhg4RJxg7ncG7v5mA5PqSdfFGmts7PQheO5vjWwKBgQDyYGrJEMmOgy9gpvmb\n5iUj+Vjskzsv0PxmCEgFkWf215AYe8LTgNZMqh+W9TpHItLKJKv4+eaF3atE65I/\nJfa+Sb73R4bRDZE4bmPiJ20QvOs5wM3NTaR0ytaSN3SAahde+sFjlqIVXmxNid8o\nOWpXZYC6ZHpB3X5mQ8sBZAm45wKBgQDimH23urL/dFdSrj3zIwEB4dKKaAbvcGRP\n3YcxMSirHM13dpjS6XWvQHhu5OJ9W5f5WFRyjPecqJYpdb9vjgnZqdOa9h7afH4n\nRsadLhuoHNvPaxG3aGmQqpJKehJ8EHI/unrkd9ncCZQP2EJKFvqV6RlCHOuMe3IL\nXdlEDDteuwKBgBwEuVN09VfcImXx53j2KeT2tiji/DyS1BqXanv6SyJl2Op7pBH/\nGsbSA8TXpF0E0Yk8pASsHtHqxhm5gbZ7FQL6U3ESe6s+/kKfwDwsgpckv6x1dVT+\nXLyDljpg3r7ZhMoeAq0YhLQjrjFodruXp4ti2Hazls52ZF4+CAGpJtaRAoGAcN0p\niVEaBTlqoUkenDMsNkbHup60DaE6pbketHba3df702wkFLGqJ3+CPSIOWgg8Ozsu\n3NuwHbyvBrmaf7MM3vjC6GV82rC1mVScav/jUKoHJlobOfJs2lzLfwMsn9UFQw7c\nVV4JCptOv1GlOwgVCoRPS2niPVfjZxv4svcwvy8CgYAWZRn5eQFqIFVKWLgfFEhR\nrNeq67DmzWIpRq+Ae4lGxXm/7vm3fwzBzIppJgRG3MfFQqkS9MHam/geUIZLqK8U\nGMtWS7yzvlG7lgj02fIYvaTvFHUZN1RcjqNEju3ZZP1h/yQgRF9n6YBdJUK1c574\nNZ8Qgz3DlPq8ffuhlI8h8g==\n-----END PRIVATE KEY-----\n","clientEmail":"firebase-adminsdk-9pvmb@food-delivery-app-fullstack.iam.gserviceaccount.com","httpClient":{"retry":{"maxRetries":4,"statusCodes":[503],"ioErrorCodes":["ECONNRESET","ETIMEDOUT"],"backOffFactor":0.5,"maxDelayInMillis":60000}}}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"[runtime-status] [45074] initializeApp(DEFAULT) {\"credential\":{\"implicit\":false,\"projectId\":\"food-delivery-app-fullstack\",\"privateKey\":\"-----BEGIN PRIVATE KEY-----\\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQDWiX6L8Afw5l8e\\nN14QPgn1qx6eWuToiN3aBw8ya+sOBMjpwpNBa9bUe+R6aXYoh/eRQZgVLsx6H6i+\\npMoLJhhJngZWIMPCL56zzzFOEjrnmhXeGp51l3o39SEpigS/1oS9u4K/xt+6LU9z\\nu7aFSc3cu7ptZjIGK+zyvxZ6ba2U842u+bL3828wfWEg5v+dG9bHat4FwXohzKn4\\nQkgx/s4hUK3x64+rtlbYK1gnWq4SwzEDVC9r9p1eDoQfaHWeH3fjEIqAsD6lWvu+\\nGVzXYafdxnlWBfJRz91E3y4oHLl1X0cdmcQw/K/kwKnyxZCaB8Nwh9V2ScEkiFtO\\nPAQWO+K9AgMBAAECggEAAaREtSJtlSDWKn+G9z3aSqh4EAMnDEZ72B7EtYCQ6GcN\\n+If2I4KFPtQB4BPthQrhUJm9ZbAZfXe/jVHqf+JXPjz41HDkvpgpsTuNJ4lJLRuH\\nPk9a1hCGLWZxTgWR2rv0ARWtvvTxIlYVbQ/LKkLx0dYX651kFZsBcawXqnEral/d\\nJ3uDNEbmm0577vqVNHSlWXF0wuZNljkNQZTi1cT0jpV/rcR2pvr+3iGJ+DBYmLuC\\nfwwmDBs/WWZm27EF7aW11fnTTAQJMyTFeWYGiOdVkOTEAXaQ0SfPFHXV0r/7lbnL\\n05yfhg4RJxg7ncG7v5mA5PqSdfFGmts7PQheO5vjWwKBgQDyYGrJEMmOgy9gpvmb\\n5iUj+Vjskzsv0PxmCEgFkWf215AYe8LTgNZMqh+W9TpHItLKJKv4+eaF3atE65I/\\nJfa+Sb73R4bRDZE4bmPiJ20QvOs5wM3NTaR0ytaSN3SAahde+sFjlqIVXmxNid8o\\nOWpXZYC6ZHpB3X5mQ8sBZAm45wKBgQDimH23urL/dFdSrj3zIwEB4dKKaAbvcGRP\\n3YcxMSirHM13dpjS6XWvQHhu5OJ9W5f5WFRyjPecqJYpdb9vjgnZqdOa9h7afH4n\\nRsadLhuoHNvPaxG3aGmQqpJKehJ8EHI/unrkd9ncCZQP2EJKFvqV6RlCHOuMe3IL\\nXdlEDDteuwKBgBwEuVN09VfcImXx53j2KeT2tiji/DyS1BqXanv6SyJl2Op7pBH/\\nGsbSA8TXpF0E0Yk8pASsHtHqxhm5gbZ7FQL6U3ESe6s+/kKfwDwsgpckv6x1dVT+\\nXLyDljpg3r7ZhMoeAq0YhLQjrjFodruXp4ti2Hazls52ZF4+CAGpJtaRAoGAcN0p\\niVEaBTlqoUkenDMsNkbHup60DaE6pbketHba3df702wkFLGqJ3+CPSIOWgg8Ozsu\\n3NuwHbyvBrmaf7MM3vjC6GV82rC1mVScav/jUKoHJlobOfJs2lzLfwMsn9UFQw7c\\nVV4JCptOv1GlOwgVCoRPS2niPVfjZxv4svcwvy8CgYAWZRn5eQFqIFVKWLgfFEhR\\nrNeq67DmzWIpRq+Ae4lGxXm/7vm3fwzBzIppJgRG3MfFQqkS9MHam/geUIZLqK8U\\nGMtWS7yzvlG7lgj02fIYvaTvFHUZN1RcjqNEju3ZZP1h/yQgRF9n6YBdJUK1c574\\nNZ8Qgz3DlPq8ffuhlI8h8g==\\n-----END PRIVATE KEY-----\\n\",\"clientEmail\":\"firebase-adminsdk-9pvmb@food-delivery-app-fullstack.iam.gserviceaccount.com\",\"httpClient\":{\"retry\":{\"maxRetries\":4,\"statusCodes\":[503],\"ioErrorCodes\":[\"ECONNRESET\",\"ETIMEDOUT\"],\"backOffFactor\":0.5,\"maxDelayInMillis\":60000}}}}"}}
+[warn] ⚠  functions: The Firebase Authentication emulator is not running, so calls to Firebase Authentication will affect production. {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"The Firebase Authentication emulator is not running, so calls to Firebase Authentication will affect production."}}
+[warn] ⚠  functions: The Cloud Firestore emulator is not running, so calls to Firestore will affect production. {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"The Cloud Firestore emulator is not running, so calls to Firestore will affect production."}}
+[debug] [2023-08-17T19:49:29.991Z] [runtime-status] [45074] Functions runtime initialized. {"cwd":"/home/mohit_karwasra/repos/food-delivery-app-fullStack/server/functions","node_version":"18.16.0"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"[runtime-status] [45074] Functions runtime initialized. {\"cwd\":\"/home/mohit_karwasra/repos/food-delivery-app-fullStack/server/functions\",\"node_version\":\"18.16.0\"}"}}
+[debug] [2023-08-17T19:49:30.041Z] [runtime-status] [45074] Listening to port: /tmp/fire_emu_0c60aa03bd6ee329.sock {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"[runtime-status] [45074] Listening to port: /tmp/fire_emu_0c60aa03bd6ee329.sock"}}
+[debug] [2023-08-17T19:49:30.109Z] [worker-us-central1-app-1e443d9f-2f4d-49f3-a2b5-a2f05421bf38]: IDLE {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"[worker-us-central1-app-1e443d9f-2f4d-49f3-a2b5-a2f05421bf38]: IDLE"}}
+[debug] [2023-08-17T19:49:30.110Z] [worker-pool] submitRequest(triggerId=us-central1-app) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitRequest(triggerId=us-central1-app)"}}
+[info] i  functions: Beginning execution of "us-central1-app" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"Beginning execution of \"us-central1-app\""}}
+[debug] [2023-08-17T19:49:30.113Z] [worker-us-central1-app-1e443d9f-2f4d-49f3-a2b5-a2f05421bf38]: BUSY {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"[worker-us-central1-app-1e443d9f-2f4d-49f3-a2b5-a2f05421bf38]: BUSY"}}
+[debug] [2023-08-17T19:49:30.137Z] Finishing up request with event=pause {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"Finishing up request with event=pause"}}
+[info] i  functions: Finished "us-central1-app" in 24.798527ms {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"Finished \"us-central1-app\" in 24.798527ms"}}
+[debug] [2023-08-17T19:49:30.138Z] [worker-us-central1-app-1e443d9f-2f4d-49f3-a2b5-a2f05421bf38]: IDLE {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"[worker-us-central1-app-1e443d9f-2f4d-49f3-a2b5-a2f05421bf38]: IDLE"}}
+[debug] [2023-08-17T19:49:30.138Z] Finishing up request with event=finish {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"Finishing up request with event=finish"}}
+[debug] [2023-08-17T19:49:30.139Z] Finishing up request with event=close {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"Finishing up request with event=close"}}
+[debug] [2023-08-17T19:49:30.139Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":[],"workRunningCount":0}
+[debug] [2023-08-17T19:49:30.302Z] Functions emulator received unknown request at path /favicon.ico
